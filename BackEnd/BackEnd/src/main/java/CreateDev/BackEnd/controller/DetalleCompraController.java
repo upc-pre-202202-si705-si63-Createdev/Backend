@@ -18,8 +18,10 @@ public class DetalleCompraController {
     public List<DetalleCompra> listar(){return dcS.list();}
 
     @PostMapping
-
     public void registrar(@RequestBody DetalleCompra dc){dcS.insertar(dc);}
+
+    @PutMapping
+    public void modificar(@RequestBody DetalleCompra dc){dcS.insertar(dc);}
 
 
 
