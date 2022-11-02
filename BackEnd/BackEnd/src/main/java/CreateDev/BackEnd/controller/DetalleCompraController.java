@@ -24,5 +24,7 @@ public class DetalleCompraController {
     public void modificar(@RequestBody DetalleCompra dc){dcS.insertar(dc);}
 
 
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){dcS.eliminar(id);}
 
 }

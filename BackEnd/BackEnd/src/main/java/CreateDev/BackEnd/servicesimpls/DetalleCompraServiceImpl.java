@@ -33,4 +33,9 @@ public class DetalleCompraServiceImpl implements IDetalleCompraService {
             return true;
         }
     }
+
+    @Override
+    public void eliminar(int idDetalleCompra) {
+        dtR.deleteById(idDetalleCompra);
+    }
 }

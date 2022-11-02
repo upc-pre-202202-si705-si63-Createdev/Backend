@@ -11,5 +11,7 @@ public interface IDetalleCompraService {
 
     public boolean insertar(DetalleCompra detalleCompra);
 
+    public void eliminar (int idDetalleCompra);
+
 
 }
