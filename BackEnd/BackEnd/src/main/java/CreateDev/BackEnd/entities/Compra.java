@@ -11,7 +11,7 @@ public class Compra {
     }
 
     public Compra(int id, String nombre_usuario, int cantidad, float precio_total, float peso_total, int tipo_comprobante, String fecha_cancelacion) {
-        this.id = id;
+        this.idCompra = id;
         this.nombre_usuario = nombre_usuario;
         this.cantidad = cantidad;
         this.precio_total = precio_total;
@@ -22,7 +22,7 @@ public class Compra {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idCompra;
 
     @Column(name = "nombre_usuario",length = 55,nullable = false)
     private String nombre_usuario;
@@ -43,11 +43,11 @@ public class Compra {
     private String fecha_cancelacion;
 
     public int getId() {
-        return id;
+        return idCompra;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.idCompra = id;
     }
 
     public String getNombre() {
