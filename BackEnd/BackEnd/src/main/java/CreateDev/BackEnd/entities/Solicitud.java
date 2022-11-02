@@ -68,8 +68,8 @@ public class Solicitud {
         return pedido;
     }
 
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+    public void setPedido(Pedido idpedido) {
+        this.pedido = idpedido;
     }
 
     public LocalDate getFecha() {
