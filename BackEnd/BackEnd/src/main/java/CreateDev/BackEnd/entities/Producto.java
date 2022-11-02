@@ -17,13 +17,13 @@ public class Producto {
     private String descripcionProducto;
 
     @Column(name = "stockProducto",length = 45,nullable = false)
-    private Number stockProducto;
+    private String stockProducto;
 
     @Column(name = "pesoProducto",length = 45,nullable = false)
-    private Number pesoProducto;
+    private String pesoProducto;
 
     @Column(name = "precioProducto",length = 45,nullable = false)
-    private Number precioProducto;
+    private String precioProducto;
 
     @Column(name = "materialProducto",length = 45,nullable = false)
     private String materialProducto;
@@ -34,7 +34,7 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int idProducto, String nameProducto, String descripcionProducto, Number stockProducto, Number pesoProducto, Number precioProducto, String materialProducto, String fechaProducto) {
+    public Producto(int idProducto, String nameProducto, String descripcionProducto, String stockProducto, String pesoProducto, String precioProducto, String materialProducto, String fechaProducto) {
         this.idProducto = idProducto;
         this.nameProducto = nameProducto;
         this.descripcionProducto = descripcionProducto;
@@ -69,27 +69,27 @@ public class Producto {
         this.descripcionProducto = descripcionProducto;
     }
 
-    public Number getStockProducto() {
+    public String getStockProducto() {
         return stockProducto;
     }
 
-    public void setStockProducto(Number stockProducto) {
+    public void setStockProducto(String stockProducto) {
         this.stockProducto = stockProducto;
     }
 
-    public Number getPesoProducto() {
+    public String getPesoProducto() {
         return pesoProducto;
     }
 
-    public void setPesoProducto(Number pesoProducto) {
+    public void setPesoProducto(String pesoProducto) {
         this.pesoProducto = pesoProducto;
     }
 
-    public Number getPrecioProducto() {
+    public String getPrecioProducto() {
         return precioProducto;
     }
 
-    public void setPrecioProducto(Number precioProducto) {
+    public void setPrecioProducto(String precioProducto) {
         this.precioProducto = precioProducto;
     }
 

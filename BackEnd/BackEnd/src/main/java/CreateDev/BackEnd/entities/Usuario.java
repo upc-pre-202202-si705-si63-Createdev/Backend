@@ -26,12 +26,12 @@ public class Usuario {
     private String direccionUsuarios;
 
     @Column(name = "telefonoUsuarios",length = 45,nullable = false)
-    private Number telefonoUsuarios;
+    private String telefonoUsuarios;
 
     public Usuario() {
     }
 
-    public Usuario(int idUsuarios, String nameUsuarios, String emailUsuarios,String lastnameUsuarios,String contraseñaUsuarios,String direccionUsuarios,Number telefonoUsuarios) {
+    public Usuario(int idUsuarios, String nameUsuarios, String emailUsuarios,String lastnameUsuarios,String contraseñaUsuarios,String direccionUsuarios,String telefonoUsuarios) {
 
         this.idUsuarios = idUsuarios;
         this.nameUsuarios = nameUsuarios;
@@ -89,11 +89,11 @@ public class Usuario {
     public void setDireccionUsuarios(String direccionUsuarios) {
         this.direccionUsuarios = direccionUsuarios;
     }
-    public Number getTelefonoUsuarios() {
+    public String getTelefonoUsuarios() {
         return telefonoUsuarios;
     }
 
-    public void setTelefonoUsuarios(Number telefonoUsuarios) {
+    public void setTelefonoUsuarios(String telefonoUsuarios) {
         this.telefonoUsuarios = telefonoUsuarios;
     }
 
