@@ -50,12 +50,12 @@ public class ClienteServiceImpl implements IClienteService{
 
     @Override
     public List<Cliente> buscarUsuario(String nameUsuarios) {
-        return dCliente.buscarPropietario(nameUsuarios);
+        return dCliente.buscarUsuario(nameUsuarios);
     }
 
     @Override
     public List<Cliente> buscarCliente(String dni) {
-        return dCliente.buscarVehiculo(dni);
+        return dCliente.buscarCliente(dni);
     }
 
 
