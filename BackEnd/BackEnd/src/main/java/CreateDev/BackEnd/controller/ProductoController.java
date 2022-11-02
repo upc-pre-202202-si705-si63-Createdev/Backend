@@ -1,25 +1,25 @@
 package CreateDev.BackEnd.controller;
 
-import CreateDev.BackEnd.entities.Pedido;
-import CreateDev.BackEnd.serviceinterfaces.IPedidoService;
+import CreateDev.BackEnd.entities.Producto;
+import CreateDev.BackEnd.serviceinterfaces.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/pedidos")
-public class PedidoController {
+@RequestMapping("/producto")
+public class ProductoController {
     @Autowired
-    private IPedidoService pService;
+    private IProductoService pService;
 
     @GetMapping("/lista")
-    public List<Pedido> listar() {
+    public List<Producto> listar() {
         return pService.list();
     }
 
     @PostMapping
-    public void registrar(@RequestBody Pedido p) {
+    public void registrar(@RequestBody Producto p) {
         pService.insert(p);
     }
 
@@ -27,14 +27,14 @@ public class PedidoController {
     public void eliminar(@PathVariable("id") Integer id) {
         pService.delete(id);
     }
-
     @PutMapping
-    public void modificar(@RequestBody Pedido p) {
+    public void modificar(@RequestBody Producto p) {
         pService.insert(p);
     }
 
     @PostMapping("/buscar")
-    public List<Pedido> buscar(@RequestBody Pedido p) {
-        return pService.search(p.getNombre());
+    public List<Producto> buscar(@RequestBody Producto p) {
+        return pService.search(p.getNameProducto());
     }
+
 }
