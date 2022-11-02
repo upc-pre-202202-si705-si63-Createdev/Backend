@@ -19,6 +19,7 @@ public class Pedido {
     @Column(name = "caracteristicas", length = 45, nullable = false)
     private String caracteristicas;
 
+
     public Pedido() {
     }
 
@@ -29,7 +30,7 @@ public class Pedido {
         this.caracteristicas = caracteristicas;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

@@ -23,7 +23,6 @@ public class Solicitud {
     private Artesano artesano;*/
 
     @OneToOne
-    @JoinColumn(name = "idPedido", nullable = false)
     private Pedido pedido;
 
     @Column(name = "fecha")
@@ -40,7 +39,7 @@ public class Solicitud {
         this.fecha = fecha;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

@@ -34,4 +34,12 @@ public class SolicitudServiceImpl implements ISolicitudService {
             return true;
         }
     }
+
+    @Override
+    @Transactional
+    public void eliminar(int id) {
+
+        dSolicitud.deleteById(id);
+
+    }
 }

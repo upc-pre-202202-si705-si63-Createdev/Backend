@@ -11,4 +11,6 @@ public interface ISolicitudService {
     List<Solicitud> listar();
 
     public boolean insertar(Solicitud solicitud);
+
+    public void eliminar(int id);
 }

@@ -19,8 +19,16 @@ public class SolicitudController {
         sService.insertar(s);
     }
 
+
+
     @GetMapping
     public List<Solicitud> listar() {
         return sService.listar();
+    }
+
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
+        sService.eliminar(id);
     }
 }
