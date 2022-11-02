@@ -13,5 +13,7 @@ public interface IDetalleCompraService {
 
     public void eliminar (int idDetalleCompra);
 
+    List<DetalleCompra> buscarDetalleCompra(int idCompra);
+
 
 }

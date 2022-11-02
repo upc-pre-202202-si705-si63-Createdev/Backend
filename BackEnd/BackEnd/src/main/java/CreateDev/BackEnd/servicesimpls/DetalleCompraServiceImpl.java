@@ -38,4 +38,9 @@ public class DetalleCompraServiceImpl implements IDetalleCompraService {
     public void eliminar(int idDetalleCompra) {
         dtR.deleteById(idDetalleCompra);
     }
+
+    @Override
+    public List<DetalleCompra> buscarDetalleCompra(int idDetalleCompra) {
+        return  dtR.buscarNombre(idDetalleCompra);
+    }
 }

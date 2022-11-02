@@ -2,6 +2,7 @@ package CreateDev.BackEnd.controller;
 
 
 import CreateDev.BackEnd.entities.DetalleCompra;
+import CreateDev.BackEnd.entities.Pedido;
 import CreateDev.BackEnd.serviceinterfaces.IDetalleCompraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,5 +27,10 @@ public class DetalleCompraController {
 
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){dcS.eliminar(id);}
+
+    @PostMapping("/buscar")
+    public List<DetalleCompra> buscar(@RequestBody DetalleCompra d) {
+        return dcS.buscarDetalleCompra(d.getIdDetalleCompra());
+    }
 
 }
