@@ -19,7 +19,10 @@ public class SolicitudController {
         sService.insertar(s);
     }
 
-
+    @PutMapping
+    public void modificar(@RequestBody Solicitud s) {
+        sService.insertar(s);
+    }
 
     @GetMapping
     public List<Solicitud> listar() {
