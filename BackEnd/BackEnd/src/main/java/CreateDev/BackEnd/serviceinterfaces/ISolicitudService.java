@@ -9,4 +9,6 @@ import java.util.Optional;
 public interface ISolicitudService {
 
     List<Solicitud> listar();
+
+    public boolean insertar(Solicitud solicitud);
 }

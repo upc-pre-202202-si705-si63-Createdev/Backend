@@ -3,9 +3,7 @@ package CreateDev.BackEnd.controller;
 import CreateDev.BackEnd.entities.Solicitud;
 import CreateDev.BackEnd.serviceinterfaces.ISolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,7 +14,10 @@ public class SolicitudController {
     @Autowired
     private ISolicitudService sService;
 
-
+    @PostMapping
+    public void registrar(@RequestBody Solicitud s) {
+        sService.insertar(s);
+    }
 
     @GetMapping
     public List<Solicitud> listar() {
