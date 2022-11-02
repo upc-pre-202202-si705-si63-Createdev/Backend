@@ -1,5 +1,6 @@
 package CreateDev.BackEnd.serviceinterfaces;
 
+import CreateDev.BackEnd.entities.Pedido;
 import CreateDev.BackEnd.entities.Solicitud;
 
 import java.time.LocalDate;
@@ -13,4 +14,6 @@ public interface ISolicitudService {
     public boolean insertar(Solicitud solicitud);
 
     public void eliminar(int id);
+
+    List<Solicitud> buscarPedido(String nombrePedido);
 }

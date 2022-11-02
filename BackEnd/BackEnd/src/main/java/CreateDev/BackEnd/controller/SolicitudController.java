@@ -5,6 +5,7 @@ import CreateDev.BackEnd.serviceinterfaces.ISolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -29,9 +30,17 @@ public class SolicitudController {
         return sService.listar();
     }
 
-
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
         sService.eliminar(id);
+    }
+
+    @PostMapping("/buscar")
+    public List<Solicitud> buscar(@RequestBody Solicitud s) throws ParseException {
+
+        List<Solicitud> listaSolicitudes;
+        listaSolicitudes = sService.buscarPedido(s.getPedido().getNombre());
+        return listaSolicitudes;
+
     }
 }

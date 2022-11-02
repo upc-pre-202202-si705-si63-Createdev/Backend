@@ -42,4 +42,9 @@ public class SolicitudServiceImpl implements ISolicitudService {
         dSolicitud.deleteById(id);
 
     }
+
+    @Override
+    public List<Solicitud> buscarPedido(String nombrePedido) {
+        return dSolicitud.buscarPedido(nombrePedido);
+    }
 }

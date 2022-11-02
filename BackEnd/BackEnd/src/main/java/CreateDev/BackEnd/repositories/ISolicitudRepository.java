@@ -1,5 +1,6 @@
 package CreateDev.BackEnd.repositories;
 
+import CreateDev.BackEnd.entities.Pedido;
 import CreateDev.BackEnd.entities.Solicitud;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
