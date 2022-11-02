@@ -40,7 +40,7 @@ public class ClientesController {
         uService.eliminar(id);
     }
     @GetMapping
-    public List<Cliente> Listar(){
+    public List<Cliente> listar(){
         return uService.listar();
     }
 

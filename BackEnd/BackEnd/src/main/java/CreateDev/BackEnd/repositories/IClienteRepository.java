@@ -12,11 +12,10 @@ import CreateDev.BackEnd.entities.Cliente;
 @Repository
 public interface IClienteRepository extends JpaRepository<Cliente, Integer> {
 
-
-        @Query("from Cliente U where u.usuario.nameUsuarios like %:nameUsuarios%")
+        @Query("FROM Cliente U WHERE U.usuarios.nameUsuarios like %:nameUsuarios%")
         List<Cliente> buscarUsuario(@Param("nameUsuarios")String nameUsuarios);
 
-        @Query("from Cliente U where u.dni like %:dni%")
+        @Query("from Cliente U where U.dni like %:dni%")
         List<Cliente> buscarCliente(@Param("dni")String dni);
 
 

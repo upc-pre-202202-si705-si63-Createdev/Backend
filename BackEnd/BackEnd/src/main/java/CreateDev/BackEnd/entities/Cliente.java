@@ -2,16 +2,7 @@ package CreateDev.BackEnd.entities;
 import java.io.Serializable;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-
+import javax.persistence.*;
 
 
 @Entity
@@ -28,12 +19,12 @@ public class Cliente implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "idUsuarios", nullable = false)
-    private Usuario usuario;
+    private Usuario usuarios;
 
-    public Cliente(int idCliente, String dni, Usuario usuario){
+    public Cliente(int idCliente, String dni, Usuario usuarios){
         this.idCliente=idCliente;
         this.dni=dni;
-        this.usuario=usuario;
+        this.usuarios=usuarios;
     }
     public Cliente(){
         super();
@@ -52,10 +43,10 @@ public class Cliente implements Serializable {
     }
 
     public Usuario getUsuario() {
-        return usuario;
+        return usuarios;
     }
 
     public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+        this.usuarios = usuario;
     }
 }
