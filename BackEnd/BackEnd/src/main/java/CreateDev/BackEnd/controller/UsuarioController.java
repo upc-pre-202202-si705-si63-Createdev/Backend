@@ -6,38 +6,41 @@ import CreateDev.BackEnd.entities.Usuario;
 import CreateDev.BackEnd.serviceinterfaces.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import java.text.ParseException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/Usuarios")
 public class UsuarioController {
 	
 	 @Autowired
 	    private IUsuarioService pService;
 
-	    @GetMapping("/lista")
+	    @GetMapping
 	    public List<Usuario> listar() {
-	        return pService.list();
+	        return pService.listar();
 	    }
 	    
 	    @PostMapping
 	    public void registrar(@RequestBody Usuario p) {
-	        pService.insert(p);
+	        pService.insertar(p);
 	    }
 
 	    @DeleteMapping("/{id}")
 	    public void eliminar(@PathVariable("id") Integer id) {
-	        pService.delete(id);
+	        pService.eliminar(id);
 	    }
 	    @PutMapping
 	    public void modificar(@RequestBody Usuario p) {
-	        pService.insert(p);
+	        pService.insertar(p);
 	    }
 
 	    @PostMapping("/buscar")
 	    public List<Usuario> buscar(@RequestBody Usuario p) {
 	        return pService.search(p.getNameUsuarios());
 	    }
+
+
 
 }

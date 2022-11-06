@@ -16,18 +16,18 @@ public class UsuarioServiceImpl implements IUsuarioService {
     private IUsuarioRepository pR;
 	
 	 @Override
-	    public void insert(Usuario usuario) {
+	    public void insertar(Usuario usuario) {
 	        pR.save(usuario);
 	    }
 	 
 	 @Override
-	    public List<Usuario> list() {
+	    public List<Usuario> listar() {
 	        return pR.findAll();
 	
 
 }
 	 @Override
-	    public void delete(int id) {
+	    public void eliminar(int id) {
 	        pR.deleteById(id);
 	    }
 	 @Override

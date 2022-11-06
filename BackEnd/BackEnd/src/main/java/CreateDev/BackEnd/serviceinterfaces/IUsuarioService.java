@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface IUsuarioService {
 	
-	public void insert(Usuario usuario);
+	public void insertar(Usuario usuario);
 
-    List<Usuario> list();
+    List<Usuario> listar();
 
-    public void delete(int id);
+    public void eliminar(int id);
 
     List<Usuario> search(String nameUsuarios);
 }
