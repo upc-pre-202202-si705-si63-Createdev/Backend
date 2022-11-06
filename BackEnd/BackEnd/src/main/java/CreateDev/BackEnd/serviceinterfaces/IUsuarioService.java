@@ -11,7 +11,7 @@ public interface IUsuarioService {
 
     List<Usuario> listar();
 
-    public void eliminar(int id);
+    public void eliminar(int id);/* SE PUEDE CAMBIAR A IDUSUARIO ----  PROBAR */
 
     List<Usuario> search(String nameUsuarios);
 }

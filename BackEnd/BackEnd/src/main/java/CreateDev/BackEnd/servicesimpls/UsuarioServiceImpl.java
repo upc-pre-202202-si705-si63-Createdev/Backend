@@ -27,8 +27,8 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
 }
 	 @Override
-	    public void eliminar(int id) {
-	        pR.deleteById(id);
+	    public void eliminar(int idUsuarios) {
+	        pR.deleteById(idUsuarios);
 	    }
 	 @Override
 	    public List<Usuario> search(String nameUsuarios) {
