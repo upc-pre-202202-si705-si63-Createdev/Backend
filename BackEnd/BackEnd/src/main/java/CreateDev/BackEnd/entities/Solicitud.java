@@ -3,26 +3,37 @@ package CreateDev.BackEnd.entities;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
-import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 @Entity
-@Table(name = "Solicitud-diseño")
-public class Solicitud {
+@Table(name = "Solicitud")
+public class Solicitud implements Serializable {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    /*@OneToOne
+    /*@ManyToOne
     @JoinColumn(name = "idCliente", nullable = false)
     private Cliente cliente;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "idArtesano", nullable = false)
     private Artesano artesano;*/
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "idPedido", nullable = false)
     private Pedido pedido;
 
     @Column(name = "fecha")
@@ -39,7 +50,7 @@ public class Solicitud {
         this.fecha = fecha;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

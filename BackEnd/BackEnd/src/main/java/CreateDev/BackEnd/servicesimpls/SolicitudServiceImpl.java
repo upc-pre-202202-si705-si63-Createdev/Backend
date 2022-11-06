@@ -44,6 +44,11 @@ public class SolicitudServiceImpl implements ISolicitudService {
     }
 
     @Override
+    public Optional<Solicitud> listarId(int id) {
+        return dSolicitud.findById(id);
+    }
+
+    @Override
     public List<Solicitud> buscarPedido(String nombrePedido) {
         return dSolicitud.buscarPedido(nombrePedido);
     }

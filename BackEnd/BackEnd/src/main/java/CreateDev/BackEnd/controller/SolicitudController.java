@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/solicitudes")
@@ -25,7 +26,7 @@ public class SolicitudController {
         sService.insertar(s);
     }
 
-    @GetMapping
+    @GetMapping("/lista")
     public List<Solicitud> listar() {
         return sService.listar();
     }
@@ -42,5 +43,10 @@ public class SolicitudController {
         listaSolicitudes = sService.buscarPedido(s.getPedido().getNombre());
         return listaSolicitudes;
 
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Solicitud> listarId(@PathVariable("id") Integer id) {
+        return sService.listarId(id);
     }
 }

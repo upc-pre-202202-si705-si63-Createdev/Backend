@@ -16,4 +16,6 @@ public interface ISolicitudService {
     public void eliminar(int id);
 
     List<Solicitud> buscarPedido(String nombrePedido);
+
+    public Optional<Solicitud> listarId(int id);
 }
