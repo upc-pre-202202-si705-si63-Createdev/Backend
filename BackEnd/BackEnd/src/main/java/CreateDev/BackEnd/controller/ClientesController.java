@@ -38,7 +38,7 @@ public class ClientesController {
     public void eliminar(@PathVariable("id")Integer id){
         uService.eliminar(id);
     }
-    @GetMapping
+    @GetMapping("/lista")
     public List<Cliente> listar(){
         return uService.listar();
     }
