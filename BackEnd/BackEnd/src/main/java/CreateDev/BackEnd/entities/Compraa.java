@@ -1,6 +1,10 @@
 package CreateDev.BackEnd.entities;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Table
 @Entity(name="Compraa")
@@ -8,7 +12,7 @@ public class Compraa {
 
     public Compraa(){}
 
-    public Compraa(int id, String nombre_usuario, int cantidad_total, float peso_total, float precio_total, int tipo_comprobante, String fecha_cancelacion) {
+    public Compraa(int id, String nombre_usuario, int cantidad_total, float peso_total, float precio_total, int tipo_comprobante, LocalDate fecha_cancelacion) {
         this.id = id;
         this.nombre_usuario = nombre_usuario;
         this.cantidad_total = cantidad_total;
@@ -37,8 +41,10 @@ public class Compraa {
     @Column(name = "tipo_comprobante",length = 45,nullable = false)
     private int tipo_comprobante;
 
-    @Column(name = "fecha_cancelacion",length = 45,nullable = false)
-    private String fecha_cancelacion;
+    @Column(name = "fecha_cancelacion")
+    @JsonSerialize(using = ToStringSerializer.class)
+    private LocalDate fecha_cancelacion;
+
 
     public int getId() {
         return id;
@@ -88,11 +94,11 @@ public class Compraa {
         this.tipo_comprobante = tipo_comprobante;
     }
 
-    public String getFecha_cancelacion() {
+    public LocalDate getFecha_cancelacion() {
         return fecha_cancelacion;
     }
 
-    public void setFecha_cancelacion(String fecha_cancelacion) {
+    public void setFecha_cancelacion(LocalDate fecha_cancelacion) {
         this.fecha_cancelacion = fecha_cancelacion;
     }
 }

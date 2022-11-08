@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/compras")
@@ -28,5 +29,9 @@ public class CompraaController {
 
     @PostMapping("/buscar")
     public List<Compraa> buscar(@RequestBody Compraa c){return cS.search(c.getNombre_usuario());}
+
+
+    @GetMapping("/{id}")
+    public Optional<Compraa> listarId(@PathVariable("id") Integer id){return cS.listarId(id);}
 
 }

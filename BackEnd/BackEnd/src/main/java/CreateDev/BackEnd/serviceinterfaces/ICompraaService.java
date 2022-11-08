@@ -4,6 +4,7 @@ import CreateDev.BackEnd.entities.Compraa;
 
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ICompraaService {
 
@@ -14,5 +15,7 @@ public interface ICompraaService {
     public void delete(int id);
 
     List<Compraa> search(String nombre_usuario);
+
+    public Optional<Compraa> listarId(int idCompraa);
 
 }
