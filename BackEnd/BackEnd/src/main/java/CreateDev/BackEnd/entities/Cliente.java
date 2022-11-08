@@ -19,12 +19,12 @@ public class Cliente implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "idUsuarios", nullable = false)
-    private Usuario usuarios;
+    private Usuario usuario;
 
-    public Cliente(int idCliente, String dni, Usuario usuarios){
+    public Cliente(int idCliente, String dni, Usuario usuario){
         this.idCliente=idCliente;
         this.dni=dni;
-        this.usuarios=usuarios;
+        this.usuario=usuario;//igual a entiti
     }
     public Cliente(){
         super();
@@ -43,10 +43,10 @@ public class Cliente implements Serializable {
     }
 
     public Usuario getUsuario() {
-        return usuarios;
+        return usuario;
     }
 
     public void setUsuario(Usuario usuario) {
-        this.usuarios = usuario;
+        this.usuario = usuario;
     }
 }
