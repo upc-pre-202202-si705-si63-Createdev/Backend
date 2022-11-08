@@ -3,7 +3,7 @@ package CreateDev.BackEnd.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Usuarios")
+@Table(name = "Usuario")
 public class Usuario {
 
     @Id
@@ -19,8 +19,8 @@ public class Usuario {
     @Column(name = "lastnameUsuarios",length = 45,nullable = false)
     private String lastnameUsuarios;
 
-    @Column(name = "contraseñaUsuarios",length = 45,nullable = false)
-    private String contraseñaUsuarios;
+    @Column(name = "contrasenaUsuarios",length = 45,nullable = false)
+    private String contrasenaUsuarios;
 
     @Column(name = "direccionUsuarios",length = 45,nullable = false)
     private String direccionUsuarios;
@@ -31,13 +31,13 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int idUsuarios, String nameUsuarios, String emailUsuarios,String lastnameUsuarios,String contraseñaUsuarios,String direccionUsuarios,String telefonoUsuarios) {
+    public Usuario(int idUsuarios, String nameUsuarios, String emailUsuarios,String lastnameUsuarios,String contrasenaUsuarios,String direccionUsuarios,String telefonoUsuarios) {
 
         this.idUsuarios = idUsuarios;
         this.nameUsuarios = nameUsuarios;
         this.emailUsuarios = emailUsuarios;
         this.lastnameUsuarios = lastnameUsuarios;
-        this.contraseñaUsuarios = contraseñaUsuarios;
+        this.contrasenaUsuarios = contrasenaUsuarios;
         this.direccionUsuarios = direccionUsuarios;
         this.telefonoUsuarios = telefonoUsuarios;
 
@@ -74,12 +74,12 @@ public class Usuario {
         this.lastnameUsuarios = lastnameUsuarios;
     }
 
-    public String getContraseñaUsuarios() {
-        return contraseñaUsuarios;
+    public String getContrasenaUsuarios() {
+        return contrasenaUsuarios;
     }
 
-    public void setContraseñaUsuarios(String contraseñaUsuarios) {
-        this.contraseñaUsuarios = contraseñaUsuarios;
+    public void setContrasenaUsuarios(String contrasenaUsuarios) {
+        this.contrasenaUsuarios = contrasenaUsuarios;
     }
 
     public String getDireccionUsuarios() {
