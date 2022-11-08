@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PedidoServiceImpl implements IPedidoService {
@@ -32,5 +33,10 @@ public class PedidoServiceImpl implements IPedidoService {
     @Override
     public List<Pedido> search(String nombre) {
         return pR.buscarNombre(nombre);
+    }
+
+    @Override
+    public Optional<Pedido> listarId(int id) {
+        return pR.findById(id);
     }
 }

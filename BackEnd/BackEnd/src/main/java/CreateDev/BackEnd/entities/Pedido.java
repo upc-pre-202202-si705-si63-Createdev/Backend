@@ -19,6 +19,7 @@ public class Pedido {
     @Column(name = "caracteristicas", length = 45, nullable = false)
     private String caracteristicas;
 
+
     public Pedido() {
     }
 

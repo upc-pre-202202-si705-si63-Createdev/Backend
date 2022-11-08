@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/pedidos")
@@ -36,5 +37,10 @@ public class PedidoController {
     @PostMapping("/buscar")
     public List<Pedido> buscar(@RequestBody Pedido p) {
         return pService.search(p.getNombre());
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Pedido> listarId(@PathVariable("id") Integer id) {
+        return pService.listarId(id);
     }
 }
