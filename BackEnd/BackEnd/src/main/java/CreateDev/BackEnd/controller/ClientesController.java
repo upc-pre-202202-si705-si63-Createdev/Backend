@@ -44,13 +44,8 @@ public class ClientesController {
     }
 
     @PostMapping("/buscar")
-    public List<Cliente> buscar(@RequestBody Cliente U) throws ParseException{
-        List<Cliente> listaclientes;
-        listaclientes=uService.buscarCliente(U.getDni());
-        if(listaclientes.isEmpty()){
-            listaclientes=uService.buscarUsuario(U.getUsuario().getNameUsuarios());
-        }
-        return listaclientes;
+    public List<Cliente> buscar(@RequestBody Cliente U){
+        return uService.buscarCliente(U.getDni());
     }
     @GetMapping("/{id}")
     public Optional<Cliente> listarID(@PathVariable("id") Integer id){
