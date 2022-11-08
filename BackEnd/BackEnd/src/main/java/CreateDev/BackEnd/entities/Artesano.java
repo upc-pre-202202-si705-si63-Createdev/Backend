@@ -1,13 +1,10 @@
 package CreateDev.BackEnd.entities;
 
-import java.io.Serializable;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Artesano")
-public class Artesano implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Artesano {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idArtesano;
@@ -20,16 +17,15 @@ public class Artesano implements Serializable {
     @ManyToOne
     @JoinColumn(name = "idUsuarios", nullable = false)
     private Usuario usuarios;
-
+    public Artesano(){
+    }
     public Artesano (int idArtesano, String provincia, String informacion, Usuario usuarios){
         this.idArtesano=idArtesano;
         this.provincia=provincia;
         this.informacion=informacion;
         this.usuarios=usuarios;
     }
-    public Artesano(){
-        super();
-    }
+
     public int getIdArtesano(){
         return idArtesano;
     }
