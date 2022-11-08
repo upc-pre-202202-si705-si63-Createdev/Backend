@@ -38,7 +38,7 @@ public class ArtesanoServiceImpl implements IArtesanoService{
     }
 
     @Override
-    public Optional<Artesano> listarid(int idArtesano) {
+    public Optional<Artesano> listarID(int idArtesano) {
 
         return dArtesano.findById(idArtesano);
     }

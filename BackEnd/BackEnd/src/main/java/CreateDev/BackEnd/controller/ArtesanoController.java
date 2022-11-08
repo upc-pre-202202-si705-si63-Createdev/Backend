@@ -36,7 +36,7 @@ public class ArtesanoController {
     public void eliminar(@PathVariable("id")Integer id){
         aService.eliminar(id);
     }
-    @GetMapping
+    @GetMapping("/lista")
     public List<Artesano> listar(){
         return aService.listar();
     }
@@ -52,7 +52,7 @@ public class ArtesanoController {
     }
     @GetMapping("/{id}")
     public Optional<Artesano> listarID(@PathVariable("id") Integer id){
-        return aService.listarid(id);
+        return aService.listarID(id);
     }
 
 }
