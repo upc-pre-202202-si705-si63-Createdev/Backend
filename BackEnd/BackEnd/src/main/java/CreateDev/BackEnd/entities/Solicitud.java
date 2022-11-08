@@ -43,11 +43,12 @@ public class Solicitud implements Serializable {
     public Solicitud(){
     }
 
-    public Solicitud(int id, LocalDate fecha) {
+    public Solicitud(int id, LocalDate fecha, Pedido pedido) {
         this.id = id;
         //this.cliente = cliente;
         //this.artesano = artesano;
         this.fecha = fecha;
+        this.pedido = pedido;
     }
 
     public int getId() {
