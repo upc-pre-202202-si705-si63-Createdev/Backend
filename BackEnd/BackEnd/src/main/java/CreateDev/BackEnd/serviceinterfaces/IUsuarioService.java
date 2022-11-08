@@ -4,14 +4,16 @@ package CreateDev.BackEnd.serviceinterfaces;
 import CreateDev.BackEnd.entities.Usuario;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IUsuarioService {
 	
-	public void insert(Usuario usuario);
+	public void insertar(Usuario usuario);
 
-    List<Usuario> list();
+    List<Usuario> listar();
+    Optional<Usuario> listarId(int idUsuario);
 
-    public void delete(int id);
+    public void eliminar(int id);/* SE PUEDE CAMBIAR A IDUSUARIO ----  PROBAR */
 
     List<Usuario> search(String nameUsuarios);
 }
