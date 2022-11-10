@@ -24,13 +24,13 @@ public class Solicitud implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "idCliente", nullable = false)
     private Cliente cliente;
 
     @ManyToOne
     @JoinColumn(name = "idArtesano", nullable = false)
-    private Artesano artesano;*/
+    private Artesano artesano;
 
     @ManyToOne
     @JoinColumn(name = "idPedido", nullable = false)
@@ -40,13 +40,13 @@ public class Solicitud implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     private LocalDate fecha;
 
-    public Solicitud(){
+    public Solicitud() {
     }
 
-    public Solicitud(int id, LocalDate fecha, Pedido pedido) {
+    public Solicitud(int id, LocalDate fecha, Pedido pedido, Artesano artesano, Cliente cliente) {
         this.id = id;
-        //this.cliente = cliente;
-        //this.artesano = artesano;
+        this.cliente = cliente;
+        this.artesano = artesano;
         this.fecha = fecha;
         this.pedido = pedido;
     }
@@ -59,7 +59,15 @@ public class Solicitud implements Serializable {
         this.id = id;
     }
 
-    /*public Cliente getCliente() {
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido idpedido) {
+        this.pedido = idpedido;
+    }
+
+    public Cliente getCliente() {
         return cliente;
     }
 
@@ -73,14 +81,6 @@ public class Solicitud implements Serializable {
 
     public void setArtesano(Artesano artesano) {
         this.artesano = artesano;
-    }*/
-
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido idpedido) {
-        this.pedido = idpedido;
     }
 
     public LocalDate getFecha() {
