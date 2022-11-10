@@ -3,6 +3,7 @@ package CreateDev.BackEnd.serviceinterfaces;
 import CreateDev.BackEnd.entities.Producto;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IProductoService {
 
@@ -14,4 +15,5 @@ public interface IProductoService {
 
     List<Producto> search(String nameProducto);
 
+    public Optional<Producto> listarId (int idProducto);
 }
