@@ -1,5 +1,6 @@
 package CreateDev.BackEnd.servicesimpls;
 
+import CreateDev.BackEnd.entities.Compraa;
 import CreateDev.BackEnd.entities.Producto;
 import CreateDev.BackEnd.repositories.IProductoRepository;
 import CreateDev.BackEnd.serviceinterfaces.IProductoService;
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ProductoServiceImpl implements IProductoService {
 
@@ -27,9 +30,14 @@ public class ProductoServiceImpl implements IProductoService {
     public void delete(int id) {
         pR.deleteById(id);
     }
+
     @Override
     public List<Producto> search(String nameProducto) {
         return pR.buscarNombre(nameProducto);
     }
 
+    @Override
+    public Optional<Producto> listarId(int idProducto) {
+        return pR.findById(idProducto);
+    }
 }
