@@ -15,4 +15,8 @@ public interface IUsuarioRepository extends JpaRepository<Usuario,Integer> {
 	@Query("FROM Usuario p WHERE p.nameUsuarios LIKE %:nameUsuarios%")
 	 List<Usuario> buscarNombre(@Param("nameUsuarios") String nameUsuarios);
 
+	@Query(value = "select * from usuario r where r.email_usuarios like '%@gmail.com'",nativeQuery = true)
+	List<Usuario> buscarcorreo();
+
+
 }

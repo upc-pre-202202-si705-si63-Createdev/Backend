@@ -16,4 +16,6 @@ public interface IUsuarioService {
     public void eliminar(int id);/* SE PUEDE CAMBIAR A IDUSUARIO ----  PROBAR */
 
     List<Usuario> search(String nameUsuarios);
+
+    List<Usuario> buscarcorreo();//buscargmail query
 }

@@ -45,5 +45,10 @@ public class UsuarioController {
 
     @GetMapping("/{id}")
     public Optional<Usuario> listarId(@PathVariable("id") Integer id) {return pService.listarId(id);}
+
+    @GetMapping("/buscarcorreo")//Buscargmailquery
+    public List<Usuario> buscarcorreo(){
+        return pService.buscarcorreo();
+    }
 }
 
