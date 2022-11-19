@@ -1,6 +1,7 @@
 package CreateDev.BackEnd.serviceinterfaces;
 
 import CreateDev.BackEnd.entities.Pedido;
+import CreateDev.BackEnd.entities.Respuesta;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,4 +17,6 @@ public interface IPedidoService {
     List<Pedido> search(String nombre);
 
     public Optional<Pedido> listarId(int id);
+
+    List<Respuesta> buscarCantidaddepedidosxcliente();
 }

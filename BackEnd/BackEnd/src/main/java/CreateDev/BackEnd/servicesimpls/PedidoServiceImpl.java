@@ -1,11 +1,13 @@
 package CreateDev.BackEnd.servicesimpls;
 
 import CreateDev.BackEnd.entities.Pedido;
+import CreateDev.BackEnd.entities.Respuesta;
 import CreateDev.BackEnd.repositories.IPedidoRepository;
 import CreateDev.BackEnd.serviceinterfaces.IPedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,5 +40,18 @@ public class PedidoServiceImpl implements IPedidoService {
     @Override
     public Optional<Pedido> listarId(int id) {
         return pR.findById(id);
+    }
+
+    public List<Respuesta>buscarCantidaddepedidosxcliente(){
+
+        List<Respuesta> lista=new ArrayList<>();
+        pR.buscarCantidaddepedidosxcliente().forEach(y->{
+            Respuesta r= new Respuesta();
+            r.setClientes(y[0]);
+            r.setCantidadpe(y[1]);
+            lista.add(r);
+        });
+        return lista;
+
     }
 }
