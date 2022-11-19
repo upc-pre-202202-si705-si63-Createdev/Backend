@@ -34,16 +34,19 @@ public class Producto {
     @Column(name = "lugarfabricacionProducto",length = 45,nullable = false)
     private String lugarfabricacionProducto;
 
-    @Column(name = "tipoproductoProducto",length = 45,nullable = false)
-    private int tipoproductoProducto;
+    @ManyToOne
+    @JoinColumn(name = "tipoproductoProducto", nullable = false)
+    private TipoProducto tipoproductoProducto;
 
-    @Column(name = "artesanoProducto",length = 45,nullable = false)
-    private int artesanoProducto;
+
+    @ManyToOne
+    @JoinColumn(name = "artesanoProducto", nullable = false)
+    private Artesano artesanoProducto;
 
     public Producto() {
     }
 
-    public Producto(int idProducto, String nameProducto, String descripcionProducto, String stockProducto, String pesoProducto, String precioProducto, String materialProducto, String fechaProducto, String lugarfabricacionProducto, int tipoproductoProducto, int artesanoProducto) {
+    public Producto(int idProducto, String nameProducto, String descripcionProducto, String stockProducto, String pesoProducto, String precioProducto, String materialProducto, String fechaProducto, String lugarfabricacionProducto, TipoProducto tipoproductoProducto, Artesano artesanoProducto) {
         this.idProducto = idProducto;
         this.nameProducto = nameProducto;
         this.descripcionProducto = descripcionProducto;
@@ -129,19 +132,19 @@ public class Producto {
         this.lugarfabricacionProducto = lugarfabricacionProducto;
     }
 
-    public int getTipoproductoProducto() {
+    public TipoProducto getTipoproductoProducto() {
         return tipoproductoProducto;
     }
 
-    public void setTipoproductoProducto(int tipoproductoProducto) {
+    public void setTipoproductoProducto(TipoProducto tipoproductoProducto) {
         this.tipoproductoProducto = tipoproductoProducto;
     }
 
-    public int getArtesanoProducto() {
+    public Artesano getArtesanoProducto() {
         return artesanoProducto;
     }
 
-    public void setArtesanoProducto(int artesanoProducto) {
+    public void setArtesanoProducto(Artesano artesanoProducto) {
         this.artesanoProducto = artesanoProducto;
     }
 }
