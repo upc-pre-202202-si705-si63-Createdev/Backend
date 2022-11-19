@@ -51,6 +51,6 @@ public class SolicitudController {
         return sService.listarId(id);
     }
 
-    @GetMapping("/cantidad-solicitud-por-provincia")
+    @GetMapping("/cantidadproxsol")
     public List<CantidadProxSol> buscarPxS(){return sService.buscarCantidadSxP();}
 }
