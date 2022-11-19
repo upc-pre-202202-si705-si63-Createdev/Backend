@@ -17,4 +17,7 @@ public interface ISolicitudRepository extends JpaRepository<Solicitud, Integer> 
     List<Solicitud> buscarPedido(@Param("nombre") String nombre);
 
     List<Solicitud> findByfecha(Date fecha);
+
+    @Query(value = "SELECT name_usuarios, email_usuarios, artesano.provincia, count(solicitud.id_artesano) FROM usuario INNER JOIN artesano ON artesano.id_usuarios = usuario.id_usuarios INNER JOIN solicitud ON solicitud.id_artesano = artesano.id_artesano GROUP BY name_usuarios, email_usuarios, artesano.provincia", nativeQuery = true)
+    List<String[]> buscarSolicitudesArtesanos();
 }

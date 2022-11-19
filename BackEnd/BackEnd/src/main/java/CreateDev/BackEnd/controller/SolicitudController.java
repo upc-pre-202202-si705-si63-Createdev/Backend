@@ -1,6 +1,7 @@
 package CreateDev.BackEnd.controller;
 
 import CreateDev.BackEnd.entities.Solicitud;
+import CreateDev.BackEnd.entities.SolicitudesArtesano;
 import CreateDev.BackEnd.serviceinterfaces.ISolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -48,5 +49,10 @@ public class SolicitudController {
     @GetMapping("/{id}")
     public Optional<Solicitud> listarId(@PathVariable("id") Integer id) {
         return sService.listarId(id);
+    }
+
+    @GetMapping("/solicitudes-artesanos")
+    public List<SolicitudesArtesano> buscarSolicitudesArtesanos(){
+        return sService.buscarSolicitudesArtesanos();
     }
 }
