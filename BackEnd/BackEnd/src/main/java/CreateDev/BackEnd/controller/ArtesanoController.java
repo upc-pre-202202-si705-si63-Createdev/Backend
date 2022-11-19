@@ -54,5 +54,9 @@ public class ArtesanoController {
     public Optional<Artesano> listarID(@PathVariable("id") Integer id){
         return aService.listarID(id);
     }
+    @GetMapping("/buscarnprovincia")
+    public List<Artesano> buscarNprovincia(){
+        return aService.buscarNprovincia();
+    }
 
 }
