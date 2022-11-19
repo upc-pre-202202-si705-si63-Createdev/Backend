@@ -1,5 +1,6 @@
 package CreateDev.BackEnd.controller;
 
+import CreateDev.BackEnd.entities.CantidadProxSol;
 import CreateDev.BackEnd.entities.Solicitud;
 import CreateDev.BackEnd.serviceinterfaces.ISolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,4 +50,7 @@ public class SolicitudController {
     public Optional<Solicitud> listarId(@PathVariable("id") Integer id) {
         return sService.listarId(id);
     }
+
+    @GetMapping("/cantidad-solicitud-por-provincia")
+    public List<CantidadProxSol> buscarPxS(){return sService.buscarCantidadSxP();}
 }

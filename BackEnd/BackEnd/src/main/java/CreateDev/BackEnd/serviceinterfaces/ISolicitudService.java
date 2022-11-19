@@ -1,5 +1,6 @@
 package CreateDev.BackEnd.serviceinterfaces;
 
+import CreateDev.BackEnd.entities.CantidadProxSol;
 import CreateDev.BackEnd.entities.Pedido;
 import CreateDev.BackEnd.entities.Solicitud;
 
@@ -18,4 +19,6 @@ public interface ISolicitudService {
     List<Solicitud> buscarPedido(String nombrePedido);
 
     public Optional<Solicitud> listarId(int id);
+
+    List<CantidadProxSol> buscarCantidadSxP();
 }

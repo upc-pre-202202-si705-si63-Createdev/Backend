@@ -1,15 +1,14 @@
 package CreateDev.BackEnd.servicesimpls;
 
-import CreateDev.BackEnd.entities.Pedido;
+import CreateDev.BackEnd.entities.CantidadProxSol;
 import CreateDev.BackEnd.entities.Solicitud;
 import CreateDev.BackEnd.repositories.ISolicitudRepository;
 import CreateDev.BackEnd.serviceinterfaces.ISolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,5 +50,18 @@ public class SolicitudServiceImpl implements ISolicitudService {
     @Override
     public List<Solicitud> buscarPedido(String nombrePedido) {
         return dSolicitud.buscarPedido(nombrePedido);
+    }
+
+    @Override
+    public List<CantidadProxSol> buscarCantidadSxP(){
+        List<CantidadProxSol> lista = new ArrayList<>();
+        dSolicitud.buscarCantidadSxP().forEach(y->{
+            CantidadProxSol r =new CantidadProxSol();
+            r.setProvincia(y[0]);
+            r.setCantidadps(y[1]);
+            lista.add(r);
+
+        });
+      return lista;
     }
 }
