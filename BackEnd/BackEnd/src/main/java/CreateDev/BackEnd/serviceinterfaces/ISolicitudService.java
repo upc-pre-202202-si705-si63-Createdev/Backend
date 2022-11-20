@@ -1,5 +1,6 @@
 package CreateDev.BackEnd.serviceinterfaces;
 
+import CreateDev.BackEnd.controller.SolicitudesRecientes;
 import CreateDev.BackEnd.entities.Pedido;
 import CreateDev.BackEnd.entities.Solicitud;
 import CreateDev.BackEnd.entities.SolicitudesArtesano;
@@ -21,4 +22,6 @@ public interface ISolicitudService {
     public Optional<Solicitud> listarId(int id);
 
     List<SolicitudesArtesano> buscarSolicitudesArtesanos();
+
+    List<SolicitudesRecientes> buscarSolicitudesRecientes();
 }

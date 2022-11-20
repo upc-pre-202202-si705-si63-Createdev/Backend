@@ -55,4 +55,9 @@ public class SolicitudController {
     public List<SolicitudesArtesano> buscarSolicitudesArtesanos(){
         return sService.buscarSolicitudesArtesanos();
     }
+
+    @GetMapping("/solicitudes-mas-recientes")
+    public List<SolicitudesRecientes> buscarSolicitudesRecientes(){
+        return sService.buscarSolicitudesRecientes();
+    }
 }
