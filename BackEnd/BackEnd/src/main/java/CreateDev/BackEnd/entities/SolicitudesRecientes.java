@@ -1,4 +1,4 @@
-package CreateDev.BackEnd.controller;
+package CreateDev.BackEnd.entities;
 
 public class SolicitudesRecientes {
 

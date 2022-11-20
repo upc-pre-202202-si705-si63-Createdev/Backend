@@ -2,6 +2,7 @@ package CreateDev.BackEnd.controller;
 
 import CreateDev.BackEnd.entities.Solicitud;
 import CreateDev.BackEnd.entities.SolicitudesArtesano;
+import CreateDev.BackEnd.entities.SolicitudesRecientes;
 import CreateDev.BackEnd.serviceinterfaces.ISolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
