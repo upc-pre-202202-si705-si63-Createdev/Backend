@@ -2,6 +2,7 @@ package CreateDev.BackEnd.servicesimpls;
 
 import CreateDev.BackEnd.entities.Compraa;
 import CreateDev.BackEnd.entities.Producto;
+import CreateDev.BackEnd.entities.ProductosPorArtesano;
 import CreateDev.BackEnd.entities.SolicitudesProducto;
 import CreateDev.BackEnd.repositories.IProductoRepository;
 import CreateDev.BackEnd.serviceinterfaces.IProductoService;
@@ -56,4 +57,19 @@ public class ProductoServiceImpl implements IProductoService {
         return lista;
 
     }
+
+    public List<ProductosPorArtesano> buscarProductosPorArtesano(){
+
+        List<ProductosPorArtesano> lista = new ArrayList<>();
+        pR.buscarProductosPorArtesano().forEach(y->{
+            ProductosPorArtesano n = new ProductosPorArtesano();
+            n.setIdArtesano(y[0]);
+            n.setNombreUsuario(y[1]);
+            n.setCantidadProductos(y[2]);
+            lista.add(n);
+        });
+        return lista;
+
+    }
+
 }

@@ -1,6 +1,7 @@
 package CreateDev.BackEnd.serviceinterfaces;
 
 import CreateDev.BackEnd.entities.Producto;
+import CreateDev.BackEnd.entities.ProductosPorArtesano;
 import CreateDev.BackEnd.entities.SolicitudesProducto;
 
 import java.util.List;
@@ -19,4 +20,5 @@ public interface IProductoService {
     public Optional<Producto> listarId (int idProducto);
 
     List<SolicitudesProducto> buscarSolicitudesProducto();
+    List<ProductosPorArtesano> buscarProductosPorArtesano();
 }
