@@ -1,5 +1,6 @@
 package CreateDev.BackEnd.servicesimpls;
 
+import CreateDev.BackEnd.controller.SolicitudesRecientes;
 import CreateDev.BackEnd.entities.Pedido;
 import CreateDev.BackEnd.entities.Solicitud;
 import CreateDev.BackEnd.entities.SolicitudesArtesano;
@@ -66,6 +67,21 @@ public class SolicitudServiceImpl implements ISolicitudService {
             n.setProvincia(y[2]);
             n.setCantidad(y[3]);
             lista.add(n);
+        });
+        return lista;
+    }
+
+    @Override
+    public List<SolicitudesRecientes> buscarSolicitudesRecientes() {
+
+        List<SolicitudesRecientes> lista = new ArrayList<>();
+        dSolicitud.buscarSolicitudesRecientes().forEach(y->{
+            SolicitudesRecientes p = new SolicitudesRecientes();
+            p.setNombre_pedido(y[0]);
+            p.setCaracteristicas(y[1]);
+            p.setEstado(y[2]);
+            p.setFecha(y[3]);
+            lista.add(p);
         });
         return lista;
     }
