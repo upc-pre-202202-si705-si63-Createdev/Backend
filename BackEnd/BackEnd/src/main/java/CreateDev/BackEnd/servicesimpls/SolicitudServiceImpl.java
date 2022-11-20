@@ -1,15 +1,15 @@
 package CreateDev.BackEnd.servicesimpls;
 
-import CreateDev.BackEnd.entities.Pedido;
 import CreateDev.BackEnd.entities.Solicitud;
+import CreateDev.BackEnd.entities.SolicitudesArtesano;
+import CreateDev.BackEnd.entities.SolicitudesRecientes;
 import CreateDev.BackEnd.repositories.ISolicitudRepository;
 import CreateDev.BackEnd.serviceinterfaces.ISolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,5 +51,35 @@ public class SolicitudServiceImpl implements ISolicitudService {
     @Override
     public List<Solicitud> buscarPedido(String nombrePedido) {
         return dSolicitud.buscarPedido(nombrePedido);
+    }
+
+    @Override
+    public List<SolicitudesArtesano> buscarSolicitudesArtesanos() {
+
+        List<SolicitudesArtesano> lista = new ArrayList<>();
+        dSolicitud.buscarSolicitudesArtesanos().forEach(y-> {
+            SolicitudesArtesano n = new SolicitudesArtesano();
+            n.setNombreUsuario(y[0]);
+            n.setEmailUsuario(y[1]);
+            n.setProvincia(y[2]);
+            n.setCantidad(y[3]);
+            lista.add(n);
+        });
+        return lista;
+    }
+
+    @Override
+    public List<SolicitudesRecientes> buscarSolicitudesRecientes() {
+
+        List<SolicitudesRecientes> lista = new ArrayList<>();
+        dSolicitud.buscarSolicitudesRecientes().forEach(y->{
+            SolicitudesRecientes p = new SolicitudesRecientes();
+            p.setNombre_pedido(y[0]);
+            p.setCaracteristicas(y[1]);
+            p.setEstado(y[2]);
+            p.setFecha(y[3]);
+            lista.add(p);
+        });
+        return lista;
     }
 }

@@ -44,13 +44,13 @@ public class ClientesController {
     }
 
     @PostMapping("/buscar")
-    public List<Cliente> buscar(@RequestBody Cliente U){
-        return uService.buscarCliente(U.getDni());
-    }
+    public List<Cliente> buscar(@RequestBody Cliente U){return uService.buscarCliente(U.getDni());}
     @GetMapping("/{id}")
     public Optional<Cliente> listarID(@PathVariable("id") Integer id){
         return uService.listarid(id);
     }
+
+
 
 
 

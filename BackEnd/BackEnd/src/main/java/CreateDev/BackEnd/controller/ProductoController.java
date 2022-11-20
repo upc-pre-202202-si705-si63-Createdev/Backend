@@ -1,6 +1,9 @@
 package CreateDev.BackEnd.controller;
 
 import CreateDev.BackEnd.entities.Producto;
+import CreateDev.BackEnd.entities.ProductosPorArtesano;
+import CreateDev.BackEnd.entities.SolicitudesArtesano;
+import CreateDev.BackEnd.entities.SolicitudesProducto;
 import CreateDev.BackEnd.serviceinterfaces.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -40,5 +43,15 @@ public class ProductoController {
 
     @GetMapping("/{id}")
     public Optional<Producto> listarId(@PathVariable("id") Integer id){return pService.listarId(id);}
+
+    @GetMapping ("/solicitudes-productos")
+    public List<SolicitudesProducto> buscarSolicitudesProducto(){
+        return pService.buscarSolicitudesProducto();
+    }
+
+    @GetMapping("/productos-artesano")
+    public List<ProductosPorArtesano> buscarProductosPorArtesano() {
+        return pService.buscarProductosPorArtesano();
+    }
 
 }
