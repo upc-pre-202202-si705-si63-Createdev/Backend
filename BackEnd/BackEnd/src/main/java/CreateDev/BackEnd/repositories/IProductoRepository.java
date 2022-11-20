@@ -12,4 +12,8 @@ public interface IProductoRepository extends JpaRepository<Producto,Integer> {
 
         @Query("FROM Producto p WHERE p.nameProducto LIKE %:nameProducto%")
         List<Producto> buscarNombre(@Param("nameProducto") String nameProducto);
+
+        @Query(value = "select lugarfabricacion_producto Ubicacion, count(producto.id_producto) from producto group by lugarfabricacion_producto", nativeQuery = true)
+        List<String[]> buscarSolicitudesProducto();
+
 }
