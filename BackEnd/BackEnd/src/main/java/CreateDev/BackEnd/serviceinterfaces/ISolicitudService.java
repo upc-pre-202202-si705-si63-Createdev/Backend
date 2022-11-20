@@ -1,10 +1,9 @@
 package CreateDev.BackEnd.serviceinterfaces;
 
-import CreateDev.BackEnd.entities.Pedido;
 import CreateDev.BackEnd.entities.Solicitud;
 import CreateDev.BackEnd.entities.SolicitudesArtesano;
+import CreateDev.BackEnd.entities.SolicitudesRecientes;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,4 +20,6 @@ public interface ISolicitudService {
     public Optional<Solicitud> listarId(int id);
 
     List<SolicitudesArtesano> buscarSolicitudesArtesanos();
+
+    List<SolicitudesRecientes> buscarSolicitudesRecientes();
 }
