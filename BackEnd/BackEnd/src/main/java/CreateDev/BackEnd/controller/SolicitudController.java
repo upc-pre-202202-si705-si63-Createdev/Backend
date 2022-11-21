@@ -2,6 +2,8 @@ package CreateDev.BackEnd.controller;
 
 import CreateDev.BackEnd.entities.CantidadProxSol;
 import CreateDev.BackEnd.entities.Solicitud;
+import CreateDev.BackEnd.entities.SolicitudesArtesano;
+import CreateDev.BackEnd.entities.SolicitudesRecientes;
 import CreateDev.BackEnd.serviceinterfaces.ISolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -51,6 +53,18 @@ public class SolicitudController {
         return sService.listarId(id);
     }
 
+<<<<<<< HEAD
     @GetMapping("/cantidadproxsol")
     public List<CantidadProxSol> buscarPxS(){return sService.buscarCantidadSxP();}
+=======
+    @GetMapping("/solicitudes-artesanos")
+    public List<SolicitudesArtesano> buscarSolicitudesArtesanos(){
+        return sService.buscarSolicitudesArtesanos();
+    }
+
+    @GetMapping("/solicitudes-mas-recientes")
+    public List<SolicitudesRecientes> buscarSolicitudesRecientes(){
+        return sService.buscarSolicitudesRecientes();
+    }
+>>>>>>> main
 }
