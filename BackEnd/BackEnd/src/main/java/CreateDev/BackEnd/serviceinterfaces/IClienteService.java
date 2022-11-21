@@ -14,4 +14,6 @@ public interface IClienteService {
     List<Cliente> listar();
     List<Cliente> buscarUsuario(String nameUsuarios);
     List<Cliente> buscarCliente(String dni);
+
+
 }

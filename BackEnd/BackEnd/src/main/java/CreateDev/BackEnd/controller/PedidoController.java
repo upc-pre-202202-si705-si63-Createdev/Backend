@@ -4,6 +4,7 @@ import CreateDev.BackEnd.entities.Pedido;
 import CreateDev.BackEnd.serviceinterfaces.IPedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import CreateDev.BackEnd.entities.Respuesta;
 
 import java.util.List;
 import java.util.Optional;
@@ -43,4 +44,10 @@ public class PedidoController {
     public Optional<Pedido> listarId(@PathVariable("id") Integer id) {
         return pService.listarId(id);
     }
+
+    @GetMapping("/cantidades*cliente")
+    public List<Respuesta> buscarCantidadpecli(){
+        return pService.buscarCantidaddepedidosxcliente();
+    }
+
 }

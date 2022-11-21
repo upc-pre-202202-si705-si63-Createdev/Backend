@@ -41,6 +41,10 @@ public class UsuarioServiceImpl implements IUsuarioService {
         return pR.buscarNombre(nameUsuarios);
     }
 
+    public List<Usuario> buscarcorreo(){//buscar query
+        return pR.buscarcorreo();
+    }
+
 
 }
 
