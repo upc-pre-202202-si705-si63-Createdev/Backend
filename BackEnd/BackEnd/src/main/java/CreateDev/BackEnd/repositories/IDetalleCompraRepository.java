@@ -14,4 +14,7 @@ public interface IDetalleCompraRepository extends JpaRepository<DetalleCompra,In
 
     @Query("from DetalleCompra dc where dc.id = :id")
     List<DetalleCompra> buscarId(@Param("id") int id);
+
+    @Query(value = "select c.nombre_usuario, dc.cantidad,dc.precio_unitario ,tp.tipo_tipo_producto from detalle_compra as dc inner join compraa as c ON c.id = dc.id_compra inner join producto as p on dc.id_producto = p.id_producto inner join tipo_producto as tp on tp.id_tipo_producto = p.tipoproducto_producto",nativeQuery = true)
+    List<String[]> query1();
 }

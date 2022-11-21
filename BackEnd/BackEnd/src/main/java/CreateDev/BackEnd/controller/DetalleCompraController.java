@@ -3,7 +3,9 @@ package CreateDev.BackEnd.controller;
 
 import CreateDev.BackEnd.entities.DetalleCompra;
 import CreateDev.BackEnd.entities.Producto;
+import CreateDev.BackEnd.entities.RespuestaCompra;
 import CreateDev.BackEnd.serviceinterfaces.IDetalleCompraService;
+import CreateDev.BackEnd.servicesimpls.ClienteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,5 +52,9 @@ public class DetalleCompraController {
 
     @GetMapping("/{id}")
     public Optional<DetalleCompra> listarId(@PathVariable("id")Integer id){return dcService.listarId(id);}
+
+
+    @GetMapping("/query1")
+    public List<RespuestaCompra> query1(){return dcService.query1();}
 
 }
