@@ -3,6 +3,7 @@ package CreateDev.BackEnd.serviceinterfaces;
 import CreateDev.BackEnd.entities.Compraa;
 import CreateDev.BackEnd.entities.DetalleCompra;
 import CreateDev.BackEnd.entities.RespuestaCompra;
+import CreateDev.BackEnd.entities.RespuestaCompra2;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -24,4 +25,7 @@ public interface IDetalleCompraService {
     List<DetalleCompra> buscarId(int id);
 
     List<RespuestaCompra> query1();
+
+    List<RespuestaCompra2> query2();
+
 }

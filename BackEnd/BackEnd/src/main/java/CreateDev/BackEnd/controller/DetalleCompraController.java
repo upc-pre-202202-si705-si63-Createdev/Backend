@@ -4,6 +4,7 @@ package CreateDev.BackEnd.controller;
 import CreateDev.BackEnd.entities.DetalleCompra;
 import CreateDev.BackEnd.entities.Producto;
 import CreateDev.BackEnd.entities.RespuestaCompra;
+import CreateDev.BackEnd.entities.RespuestaCompra2;
 import CreateDev.BackEnd.serviceinterfaces.IDetalleCompraService;
 import CreateDev.BackEnd.servicesimpls.ClienteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,5 +57,8 @@ public class DetalleCompraController {
 
     @GetMapping("/query1")
     public List<RespuestaCompra> query1(){return dcService.query1();}
+
+    @GetMapping("/query2")
+    public List<RespuestaCompra2> query2(){return dcService.query2();}
 
 }

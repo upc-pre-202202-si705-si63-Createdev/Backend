@@ -2,6 +2,7 @@ package CreateDev.BackEnd.servicesimpls;
 
 import CreateDev.BackEnd.entities.DetalleCompra;
 import CreateDev.BackEnd.entities.RespuestaCompra;
+import CreateDev.BackEnd.entities.RespuestaCompra2;
 import CreateDev.BackEnd.repositories.IDetalleCompraRepository;
 import CreateDev.BackEnd.serviceinterfaces.IDetalleCompraService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,21 @@ public class DetalleCompraServiceImpl implements IDetalleCompraService {
             rc.setCantidad(y[1]);
             rc.setPrecio_unitario(y[2]);
             rc.setTipo_producto(y[3]);
+
+            lista.add(rc);
+        });
+        return  lista;
+    }
+
+    @Override
+    public List<RespuestaCompra2> query2() {
+        List<RespuestaCompra2> lista = new ArrayList<>();
+
+        dcRepo.query2().forEach(y->{
+            RespuestaCompra2 rc = new RespuestaCompra2();
+            rc.setCliente(y[0]);
+            rc.setCantidad(y[1]);
+            rc.setNombreArtesano(y[2]);
 
             lista.add(rc);
         });
