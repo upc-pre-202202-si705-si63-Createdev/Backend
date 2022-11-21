@@ -58,4 +58,9 @@ public class ArtesanoServiceImpl implements IArtesanoService{
         return dArtesano.buscarArtesano(provincia);
     }
 
+
+    @Override
+    public List<Artesano> buscarNprovincia() {
+        return dArtesano.buscarNprovincia();
+    }
 }

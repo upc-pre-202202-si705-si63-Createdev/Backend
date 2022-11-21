@@ -1,5 +1,9 @@
 package CreateDev.BackEnd.servicesimpls;
 
+<<<<<<< HEAD
+import CreateDev.BackEnd.entities.CantidadProxSol;
+=======
+>>>>>>> main
 import CreateDev.BackEnd.entities.Solicitud;
 import CreateDev.BackEnd.entities.SolicitudesArtesano;
 import CreateDev.BackEnd.entities.SolicitudesRecientes;
@@ -54,6 +58,18 @@ public class SolicitudServiceImpl implements ISolicitudService {
     }
 
     @Override
+<<<<<<< HEAD
+    public List<CantidadProxSol> buscarCantidadSxP(){
+        List<CantidadProxSol> lista = new ArrayList<>();
+        dSolicitud.buscarCantidadSxP().forEach(y->{
+            CantidadProxSol r =new CantidadProxSol();
+            r.setProvincia(y[0]);
+            r.setCantidadps(y[1]);
+            lista.add(r);
+
+        });
+      return lista;
+=======
     public List<SolicitudesArtesano> buscarSolicitudesArtesanos() {
 
         List<SolicitudesArtesano> lista = new ArrayList<>();
@@ -81,5 +97,6 @@ public class SolicitudServiceImpl implements ISolicitudService {
             lista.add(p);
         });
         return lista;
+>>>>>>> main
     }
 }

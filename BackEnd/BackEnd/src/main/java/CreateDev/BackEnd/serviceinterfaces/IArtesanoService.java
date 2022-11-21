@@ -13,4 +13,6 @@ public interface IArtesanoService {
     List<Artesano> listar();
     List<Artesano> buscarUsuario(String nameUsuarios);
     List<Artesano> buscarArtesano(String provincia);
+
+    List<Artesano> buscarNprovincia();
 }

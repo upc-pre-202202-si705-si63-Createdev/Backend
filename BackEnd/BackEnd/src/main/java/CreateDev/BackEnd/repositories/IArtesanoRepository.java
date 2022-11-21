@@ -15,4 +15,7 @@ public interface IArtesanoRepository extends JpaRepository<Artesano, Integer>{
 
     @Query("from Artesano a where a.provincia like %:provincia%")
     List<Artesano> buscarArtesano (@Param("provincia")String provincia);
+
+    @Query(value = "select * from artesano r where r.provincia like '%Lima'",nativeQuery = true)
+    List<Artesano>buscarNprovincia();
 }
