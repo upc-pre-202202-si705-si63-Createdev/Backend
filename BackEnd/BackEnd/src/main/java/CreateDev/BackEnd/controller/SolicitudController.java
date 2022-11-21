@@ -53,10 +53,9 @@ public class SolicitudController {
         return sService.listarId(id);
     }
 
-<<<<<<< HEAD
     @GetMapping("/cantidadproxsol")
     public List<CantidadProxSol> buscarPxS(){return sService.buscarCantidadSxP();}
-=======
+
     @GetMapping("/solicitudes-artesanos")
     public List<SolicitudesArtesano> buscarSolicitudesArtesanos(){
         return sService.buscarSolicitudesArtesanos();
@@ -66,5 +65,5 @@ public class SolicitudController {
     public List<SolicitudesRecientes> buscarSolicitudesRecientes(){
         return sService.buscarSolicitudesRecientes();
     }
->>>>>>> main
+
 }
