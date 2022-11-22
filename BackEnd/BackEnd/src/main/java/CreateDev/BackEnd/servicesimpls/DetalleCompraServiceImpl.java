@@ -27,7 +27,9 @@ public class DetalleCompraServiceImpl implements IDetalleCompraService {
         if(objDC==null){
             return false;
         }
-        else{return true;}
+        else{
+            return true;
+        }
     }
 
     @Override
